@@ -23,13 +23,16 @@ if uploaded_file and api_key:
     st.image(image, caption="Current Working Out", use_container_width=True)
     
     if st.button("RUN ADVERSARIAL AUDIT"):
-        model = genai.GenerativeModel('gemini-3.5-flash')
-            if st.button("RUN ADVERSARIAL AUDIT"):
-        with st.spinner("Engine auditing..."): 
-            model = genai.GenerativeModel('gemini-3.5-flash')
-            response = model.generate_content([system_prompt, image])
-            st.subheader("Audit Results")
-            st.json(response.text)
+        model = genai.GenerativeModel('gemini-3.5-flash')          
+# No spaces here at the start of the line
+if st.button("RUN ADVERSARIAL AUDIT"):
+    # Exactly 4 spaces of indentation here
+    with st.spinner("Engine auditing..."):
+        # Exactly 8 spaces of indentation here
+        model = genai.GenerativeModel('gemini-1.5-flash')
+        response = model.generate_content([system_prompt, image])
+        st.subheader("Audit Results")
+        st.json(response.text)
 
         
         system_prompt = (
