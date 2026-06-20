@@ -23,7 +23,7 @@ if uploaded_file and api_key:
     st.image(image, caption="Current Working Out", use_container_width=True)
     
     if st.button("RUN ADVERSARIAL AUDIT"):
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.5-flash')
         
         system_prompt = (
             "You are the central core of BlackBox, the elite mathematical bridging engine.\n"
