@@ -24,6 +24,13 @@ if uploaded_file and api_key:
     
     if st.button("RUN ADVERSARIAL AUDIT"):
         model = genai.GenerativeModel('gemini-3.5-flash')
+            if st.button("RUN ADVERSARIAL AUDIT"):
+        with st.spinner("Engine auditing..."): 
+            model = genai.GenerativeModel('gemini-3.5-flash')
+            response = model.generate_content([system_prompt, image])
+            st.subheader("Audit Results")
+            st.json(response.text)
+
         
         system_prompt = (
             "You are the central core of BlackBox, the elite mathematical bridging engine.\n"
