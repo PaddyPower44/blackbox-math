@@ -16,7 +16,8 @@ if uploaded_file and api_key:
     st.image(image, caption="Current Working Out", use_container_width=True)
     
     system_prompt = "You are an elite math tutor. Audit the user's work for heuristic shortcuts."
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-2.5-flash')
+
 
     if st.button("RUN ADVERSARIAL AUDIT"):
         with st.spinner("Engine auditing..."):
